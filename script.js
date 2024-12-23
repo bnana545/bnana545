@@ -1,6 +1,8 @@
 async function fetchServerStatus() {
     const ip = document.getElementById('server-ip').value;
     const port = document.getElementById('server-port').value;
+    const response = await fetch(`server-status.php?ip=${ip}&port=${port}`);
+
 
     if (!ip || !port) {
         alert('Please enter both IP and Port.');
